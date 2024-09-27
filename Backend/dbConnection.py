@@ -27,20 +27,3 @@ for res in results:
 
 
 
-# m = MetaData()
-
-# t = Table('ROLLBRUSH', m,
-#           Column('brushId', String, primary_key=True),
-#           Column('toc', DateTime),
-#           Column('tom', DateTime),
-#           Column('mop', String)
-#           )
-
-# stmt = select(t.c.mop).where(t.c.brushId > '0')
-
-# connection = engine.connect()
-
-# results = connection.execute(stmt).fetchall()
-
-# for res in results:
-#     print(res)
