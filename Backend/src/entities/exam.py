@@ -1,5 +1,7 @@
 # coding=utf-8
 
+from marshmallow import Schema, fields
+
 from sqlalchemy import Column, String
 
 from src.entities.entity import Entity, Base
@@ -15,3 +17,7 @@ class Exam(Entity, Base):
         Entity.__init__(self, created_by)
         self.title = title
         self.description = description
+
+
+class ExamSchema(Schema):
+    id = fields.Number()
