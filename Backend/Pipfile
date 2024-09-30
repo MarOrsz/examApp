@@ -9,6 +9,7 @@ psycopg2-binary = "*"
 pymssql = "*"
 flask = "*"
 marshmallow = "*"
+flask-cors = "*"
 
 [dev-packages]
 
