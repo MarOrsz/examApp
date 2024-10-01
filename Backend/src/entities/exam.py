@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from marshmallow import Schema, fields
+from marshmallow import Schema, fields, EXCLUDE
 
 from sqlalchemy import Column, String
 
@@ -9,7 +9,6 @@ from src.entities.entity import Entity, Base
 
 class Exam(Entity, Base):
     __tablename__ = 'exams'
-
     title = Column(String)
     description = Column(String)
 
@@ -21,3 +20,10 @@ class Exam(Entity, Base):
 
 class ExamSchema(Schema):
     id = fields.Number()
+    title = fields.Str()
+    description = fields.Str()
+    created_at = fields.DateTime()
+    updated_at = fields.DateTime()
+    last_updated_by = fields.Str()
+    class Meta:
+        unknown = EXCLUDE
