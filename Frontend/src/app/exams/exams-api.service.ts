@@ -4,8 +4,6 @@ import {Observable} from 'rxjs';
 import {API_URL} from '../env';
 import {Exam} from './exam.model';
 import { throwError } from 'rxjs';
-import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
-
 
 
 @Injectable()
