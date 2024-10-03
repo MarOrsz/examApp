@@ -25,4 +25,9 @@ export class ExamsApiService {
     return this.http
       .post(`${API_URL}/exams`, exam);
   }
+
+  deleteExam(examId: number) {
+    return this.http
+      .delete(`${API_URL}/exams/${examId}`);
+  }
 }

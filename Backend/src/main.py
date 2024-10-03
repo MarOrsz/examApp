@@ -32,7 +32,7 @@ def get_exams():
 @app.route('/exams', methods=['POST'])
 def add_exam():
     # mount exam object
-    posted_exam = ExamSchema(only=('title', 'description'))\
+    posted_exam = ExamSchema(only=('title', 'description', 'long_description'))\
         .load(request.get_json())
 
     exam = Exam(**posted_exam, created_by="HTTP post request")
@@ -46,3 +46,13 @@ def add_exam():
     new_exam = ExamSchema().dump(exam)
     session.close()
     return jsonify(new_exam), 201
+
+@app.route('/exams/<examId>', methods=['DELETE'])
+def delete_exam(examId):
+    session = Session()
+    exam = session.query(Exam).filter_by(id = examId).first()
+    session.delete(exam)
+    session.commit()
+    session.close()
+
+    return '', 201
