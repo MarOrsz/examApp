@@ -1,6 +1,9 @@
+
+<button routerLink="/form">Add exam</button>
 @for (exam of examsList; track exam.title) {
 <li>
     {{exam.title}}
 </li>
 }
 
+<router-outlet></router-outlet>

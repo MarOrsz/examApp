@@ -20,4 +20,9 @@ export class ExamsApiService {
   getExams(): Observable<Exam[]> {
     return this.http.get<Exam[]>(`${API_URL}/exams`);
   }
+
+  saveExam(exam: Exam): Observable<any> {
+    return this.http
+      .post(`${API_URL}/exams`, exam);
+  }
 }
